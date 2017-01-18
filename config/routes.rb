@@ -8,6 +8,12 @@ Rails.application.routes.draw do
 resources :welcome do
 end
 
+resources :jobs do
+    collection do
+      get :search
+    end
+  end
+  
   root 'welcome#index'
 
   namespace :admin do
