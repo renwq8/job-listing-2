@@ -19,62 +19,10 @@
 @import "bootstrap";
 @import "font-awesome";
 
-.custab{
-  border: 1px solid #ccc;
-  padding: 5px;
-  margin: 5% 0;
-  box-shadow: 3px 3px 2px #ccc;
-  transition: 0.5s;
-}
-
-.custab:hover{
-  box-shadow: 3px 3px 0px transparent;
-  transition: 0.5s;
-}
-
-.jumbotron {
-  background-image:url('https://images.unsplash.com/photo-1447523264591-68112eb55c23?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=40f73cc65576fedf94c9d021f6cc2983');
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-bottom: 110px;
-}
-
-.title {
-  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-  text-align: center;
-  margin-top: 200px;
-  margin-bottom: 80px;
-}
-
-.slogan {
-  margin-top: 10px;
-  margin-bottom: 50px;
-  text-align: center;
-  color: white;
-  top: 12px;
-}
-
-.lead {
-  margin-bottom: 60px;
-  text-align: center;
-  color: white;
-}
-
-.caption {
-  margin: 30px;
-  text-align: center;
-  top: 20px;
-}
-
-.thumbnail {
-    border: 0 none;
-    box-shadow: none;
-    margin-top: 0px;
-}
 
 .navbar-default {
-    background-color: black;
-    border-color: #212121;
+    background-color: 41433F;
+    border-color: 41433F;
     margin-bottom: 0;
 }
 
@@ -85,7 +33,7 @@
 }
 
 .navbar-default .navbar-brand {
-   color: #EF6C00;
+   color: 12170D;
    padding: 10px 15px;
    line-height: 30px;
 }
@@ -97,7 +45,7 @@
 }
 
 .navbar-default .navbar-nav > li > a{
-  color: #EF6C00;
+  color: 12170D;
 }
 
 .navbar-default .navbar-nav > li > a:hover,

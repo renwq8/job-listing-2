@@ -15,13 +15,14 @@ end
     @jobs = case params[:order]
 
     when 'by_lower_bound'
-      Job.published.order('wage_lower_bound DESC')
+      Job.published.order('wage_lower_bound DESC').paginate(:page => params[:page], :per_page => 5)
     when 'by_upper-bound'
-      Job.published.order('wage_upper_bound DESC')
+      Job.published.order('wage_upper_bound DESC').paginate(:page => params[:page], :per_page => 5)
     else
-      Job.published.recent
+      Job.published.recent.paginate(:page => params[:page], :per_page => 5)
     end
   end
+
 
 def new
   @job = Job.new
@@ -60,7 +61,7 @@ end
 def search
     if @query_string.present?
       search_result = Job.ransack(@search_criteria).result(:distinct => true)
-      @jobs = search_result.paginate(:page => params[:page], :per_page => 20 )
+      @jobs = search_result.paginate(:page => params[:page], :per_page => 5 )
     end
   end
 
@@ -68,19 +69,29 @@ def search
   protected
 
   def validate_search_key
-    @query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
-    @search_criteria = search_criteria(@query_string)
+    @query_string = params[:q].gsub(/\\|\'|\/|\?/, "")
+    if params[:q].present?
+    @search_criteria = {
+      title_cont: @query_string
+    }
   end
+end
 
 
   def search_criteria(query_string)
     { :title_cont => query_string }
   end
 
+  def render_highlight_content(job,query_string)
+    excerpt_cont = excerpt(job.title, query_string, radius: 500)
+    highlight(excerpt_cont, query_string)
+  end
+
+
 private
 
 def job_params
-  params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email, :is_hidden)
+  params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email, :is_hidden, :page, :search)
 end
 
 
