@@ -1,54 +1,61 @@
+<%= form_tag jobs_path, :method => "get" do %>
 
+<div class="searchform">
+    <%= text_field_tag :search, params[:search], placeholder: "Job, Company", class: "searchbox"%>
+    <span>
+        <%= submit_tag "SEARCH", :title => nil, :description => nil, class: "mike" %>
+        <!-- <input type="submit" value="点 击" class="mike"> -->
+    </span>
+</div>
+<% end %>
 
 <div class="dropdown clearfix pull-right">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown"
-  aria-haspopup="true" aria-expanded="true">
-  Sort
-  <span class="caret"></span>
-</button>
-<ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-  <li>
-    <%= link_to("Sort by Lower Wage", jobs_path(:order => "by_lower_bound"))%>
-  </li>
-  <li>
-    <%= link_to("Sort by Higher Wage", jobs_path(:order => "by_upper-bound"))%>
-  </li>
-  <li>
-    <%= link_to("Sort by Post Time", jobs_path) %>
-  </li>
-</ul>
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Sort
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+        <li>
+            <%= link_to("Sort by Lower Wage", jobs_path(:order => "by_lower_bound"))%>
+        </li>
+        <li>
+            <%= link_to("Sort by Higher Wage", jobs_path(:order => "by_upper-bound"))%>
+        </li>
+        <li>
+            <%= link_to("Sort by Post Time", jobs_path) %>
+        </li>
+    </ul>
 </div>
 
-
 <table class="table table-boldered table-striped custab">
-  <thead>
-    <tr>
-      <td>职缺</td>
-      <td>工资下限</td>
-      <td>工资上限</td>
-      <td>发布时间</td>
-    </tr>
-  </thead>
-  <tbody>
-  <% @jobs.each do |job| %>
-  <tr>
-    <td>
-      <%= link_to(job.title, job_path(job)) %>
-    </td>
-    <td>
-      <%= job.wage_lower_bound %>
-    </td>
-    <td>
-      <%= job.wage_upper_bound %>
-    </td>
-    <td>
-      <%= job.created_at %>
-    </td>
-  </tr>
-  <% end %>
-</tbody>
+    <thead>
+        <tr>
+            <td>职缺</td>
+            <td>工资下限</td>
+            <td>工资上限</td>
+            <td>发布时间</td>
+        </tr>
+    </thead>
+    <tbody>
+        <% @jobs.each do |job| %>
+        <tr>
+            <td>
+                <%= link_to(job.title, job_path(job)) %>
+            </td>
+            <td>
+                <%= job.wage_lower_bound %>
+            </td>
+            <td>
+                <%= job.wage_upper_bound %>
+            </td>
+            <td>
+                <%= job.created_at %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
 </table>
 
 <div class="text-center">
-   <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
- </div>
+    <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+</div>

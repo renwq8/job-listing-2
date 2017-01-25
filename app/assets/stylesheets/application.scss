@@ -21,9 +21,19 @@
 
 
 .navbar-default {
-    background-color: 41433F;
-    border-color: 41433F;
-    margin-bottom: 0;
+    background-color: #2d1e10;
+    border-color: #2d1e10;
+    position: relative;
+    margin-bottom: 0px;
+    height: 10px;
+    padding-top: 2px;
+}
+
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 @media (min-width: 768px) {
@@ -33,10 +43,27 @@
 }
 
 .navbar-default .navbar-brand {
-   color: 12170D;
-   padding: 10px 15px;
-   line-height: 30px;
-}
+      font-family: 'Open Sans' , sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      text-align: center;
+      color: #FFFFFF;
+      margin-top: 0.2px;
+      text-transform: uppercase;
+      letter-spacing: 0px;
+  }
+
+
+  .navbar-collapse {
+      width: 100%;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-top: 0.5px;
+      outline: 0;
+      cursor: pointer;
+      letter-spacing: 0px;
+  }
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
@@ -65,4 +92,13 @@
 .navbar-default .navbar-nav > .open > a:hover {
     background-color: #FFE0B2;
     color: #212121;
+}
+
+.table {
+    background: #FFF;
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+    margin-top: 60px;
+    color: #333;
 }
