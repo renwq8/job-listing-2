@@ -8,18 +8,20 @@
 }
 .jumbotron2 {
     // background-image: url('https://ooo.0o0.ooo/2017/01/15/587b281665253.png');
-    background-image: url('https://images.unsplash.com/photo-1444985196643-57cb0154bbd5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=b61713cef1c82a52903e9acaca626334');
+    background-image: url('https://images.unsplash.com/photo-1438302439441-82e18f791f5e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=30909281ac9d85db30feed9905118cf8');
     // background-repeat: no-repeat;
     background-size: cover;
     padding-top: 180px; //内部的底部边距，这样按钮不会很靠近底部了
     padding-bottom: 150px; //内部的底部边距，这样按钮不会很靠近底部了
     margin-top: 0; //顶部margin为0，因此可以直接接着导航栏；左右margin为负15，
+    margin-bottom: 0px;
     border-radius: 0;
 }
 
 .jumbotron1 {
+    background: #2d1e10;
     display: block;
-    background: transparent;
+    box-shadow: none;
     // margin: 0 -15px -15px 0; //顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
     border-radius: 0; //圆角为0
 }
@@ -27,13 +29,19 @@
 .jumbotron2 .h1,
 .jumbotron2 h1 {
     text-align: center; //文字左对齐
-    color: #FB8C00; //字体颜色
+    font-family: 'Open Sans' , sans-serif;
+    font-weight: 500;
+    color: #2d1e10; //字体颜色
     padding: 10px; //上50px，左右20px，下0
+    letter-spacing: 0;
 }
 
 .jumbotron2 p {
     margin: 0; //上下左右margin为0
+    font-family: 'Open Sans' , sans-serif;
+    font-weight: 500;
     font-size: 26px; //字体大小
+    letter-spacing: 0;
     // max-width: 600px; //最大宽度
     background-color: rgba(250, 250, 250, 0.2); //背景颜色含透明度
     padding: 5px; //上下左右padding为20px
@@ -78,12 +86,13 @@
 .btn-lg {
     padding: 8px 16px; //通过padding来决定btn的大小
     font-size: 20px; //btn文字大小
-    letter-spacing: 3px; //调整文字间距
+    letter-spacing: 2px; //调整文字间距
     border-radius: 3px; //btn圆角
-    width: 200px; //这里用指定宽度把btn拉得更长
+    width: 80px; //这里用指定宽度把btn拉得更长
 }
 
 .caption {
+  border: none;
     margin: 10px;
     text-align: center;
     top: 0;
@@ -91,6 +100,7 @@
 }
 
 .thumbnail {
+  box-shadow: none;
     border: none;
     margin-top: 30px;
     margin-down: 30px;
@@ -109,4 +119,20 @@
 .custab:hover {
     box-shadow: 3px 3px 0 transparent;
     transition: 0.5s;
+}
+
+.foot {
+  font-family: PingFangSC-Medium, Verdana, Geneva, sans-serif;
+  background-color: #2d1e10;
+  text-align: center;
+  color: #7e7e7e;
+  line-height: 40px;
+  height: 20px;
+  margin-top: 40px;
+  margin-bottom: 0px;
+  position:fixed;
+  left:0px;
+  right: 0px;
+  bottom:0px;
+  padding-bottom: 40px;
 }
